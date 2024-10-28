@@ -51,8 +51,6 @@ namespace cinemaAutomation.Models
             {
                 CloseConnection();
             }
-
-
         }
 
         public void CloseConnection()

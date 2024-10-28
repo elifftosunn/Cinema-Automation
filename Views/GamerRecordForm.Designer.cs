@@ -71,6 +71,8 @@
             updateRecordButton.TabIndex = 13;
             updateRecordButton.Text = "Update Record";
             updateRecordButton.UseVisualStyleBackColor = false;
+            //updateRecordButton.Click += Update;
+
             // 
             // completeRegistrationButton
             // 
@@ -84,7 +86,7 @@
             completeRegistrationButton.TabIndex = 12;
             completeRegistrationButton.Text = "Complete Registration";
             completeRegistrationButton.UseVisualStyleBackColor = false;
-            completeRegistrationButton.Click += completeRegistrationButton_Click;
+            completeRegistrationButton.Click += Save;
             // 
             // groupBox3
             // 
@@ -128,6 +130,7 @@
             biographyTextBox.Name = "biographyTextBox";
             biographyTextBox.Size = new Size(524, 96);
             biographyTextBox.TabIndex = 9;
+            biographyTextBox.TextChanged += biographyTextBox_TextChanged;
             // 
             // groupBox2
             // 
@@ -226,6 +229,7 @@
             genderComboBox.Size = new Size(125, 28);
             genderComboBox.TabIndex = 6;
             genderComboBox.Text = "F";
+            genderComboBox.SelectedIndexChanged += genderComboBox_SelectedIndexChanged;
             // 
             // DateOfBirthDateTimePicker
             // 

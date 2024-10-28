@@ -1,4 +1,6 @@
-﻿namespace cinemaAutomation
+﻿using cinemaAutomation.Controllers;
+
+namespace cinemaAutomation
 {
     partial class DirectorRecordForm
     {
@@ -308,7 +310,7 @@
             completeRegistrationButton.TabIndex = 6;
             completeRegistrationButton.Text = "Complete Registration";
             completeRegistrationButton.UseVisualStyleBackColor = false;
-            completeRegistrationButton.Click += completeRegistrationButton_Click;
+            completeRegistrationButton.Click += SaveRecordButton;
             // 
             // updateRecordButton
             // 
@@ -322,7 +324,7 @@
             updateRecordButton.TabIndex = 7;
             updateRecordButton.Text = "Update Record";
             updateRecordButton.UseVisualStyleBackColor = false;
-            updateRecordButton.Click += updateRecordButton_Click;
+            updateRecordButton.Click += UpdateRecordButton_OnClick;
             // 
             // DirectorRecordForm
             // 

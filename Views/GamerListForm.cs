@@ -1,29 +1,26 @@
-﻿using System;
+﻿using cinemaAutomation.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using cinemaAutomation.Models;
-using cinemaAutomation.Properties;
-using System.Collections;
 
 namespace cinemaAutomation.Views
 {
-    public partial class DirectorListForm : Form
+    public partial class GamerListForm : Form
     {
         private DBConnection conn;
         private SqlDataReader reader;
         private ListControl tool;
-        public DirectorListForm()
+        public GamerListForm()
         {
             InitializeComponent();
             conn = new DBConnection();
-
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -51,17 +48,16 @@ namespace cinemaAutomation.Views
             }
             conn.CloseConnection();
         }
-        private void DirectorListForm_Load(object sender, EventArgs e)
+        private void GamerListForm_Load(object sender, EventArgs e)
         {
             listPanel.Controls.Clear();
-            string query = "SELECT * FROM Directors;";
+            string query = "SELECT * FROM Gamers;";
             viewDatas(query);
         }
-
-        private void fullNameTextBoxForSearch_TextChanged(object sender, EventArgs e)
+        private void fullNameTextBoxForSearch_TextChanged_1(object sender, EventArgs e)
         {
             listPanel.Controls.Clear();
-            string query = "SELECT * FROM Directors WHERE fullName LIKE '%"+fullNameTextBoxForSearch.Text+"%' ORDER BY fullName ASC";
+            string query = "SELECT * FROM Gamers WHERE fullName LIKE '%" + fullNameTextBoxForSearch.Text + "%' ORDER BY fullName ASC";
             viewDatas(query);
         }
     }

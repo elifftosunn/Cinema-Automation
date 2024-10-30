@@ -37,11 +37,22 @@ namespace cinemaAutomation
             directorListForm.ShowDialog();
         }
 
-        private void gamerRecordButton_Click(object sender, EventArgs e)
+        private void gamerRecordButton_Click_1(object sender, EventArgs e)
         {
             GamerRecordForm gamerRecordForm = new GamerRecordForm();
-            gamerRecordForm.ShowDialog();   
+            gamerRecordForm.ShowDialog();
+        }
 
+        private void gamerListButton_Click(object sender, EventArgs e)
+        {
+            GamerListForm gamerListForm = new GamerListForm();
+            gamerListForm.ShowDialog();
+        }
+
+        private void saloonRecordButton_Click(object sender, EventArgs e)
+        {
+            SaloonRecordForm saloonRecordForm = new SaloonRecordForm(); 
+            saloonRecordForm.ShowDialog();  
         }
     }
 }   

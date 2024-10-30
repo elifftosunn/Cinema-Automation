@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace cinemaAutomation.Views
 {
-    public partial class DirectorListControl : UserControl
+    public partial class ListControl : UserControl
     {
         private DBConnection connection;
         private DirectorListForm directorListForm;
         private DirectorRecordForm directorRecordForm;
 
-        public DirectorListControl()
+        public ListControl()
         {
             InitializeComponent();
             connection = new DBConnection();
@@ -52,7 +52,7 @@ namespace cinemaAutomation.Views
                 foreach (Control control in directorListForm.Controls)
                 {
                     Debug.WriteLine("***************************************");
-                    if (control is DirectorListControl directorControl && directorControl.directorID.Text == directorID.Text)
+                    if (control is ListControl directorControl && directorControl.directorID.Text == directorID.Text)
                     {
                         Debug.WriteLine("directorControl.directorID.Text: " + directorControl.directorID.Text);
                         Debug.WriteLine("directorID.Text: " + directorID.Text);

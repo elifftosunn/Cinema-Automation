@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,25 +23,31 @@ namespace cinemaAutomation.Views
         }
         public override void SaveRecord()
         {
-            fullName = string.Concat(firstNameTextBox.Text[0].ToString().ToUpper(), firstNameTextBox.Text.AsSpan(1))
+            if (firstNameTextBox.Text != "" && lastNameTextBox.Text != "")
+            {
+                fullName = string.Concat(firstNameTextBox.Text[0].ToString().ToUpper(), firstNameTextBox.Text.AsSpan(1))
     + " " + string.Concat(lastNameTextBox.Text[0].ToString().ToUpper(), lastNameTextBox.Text.AsSpan(1));
-            string query = "INSERT INTO Gamers (fullName, gender, age, biography, image, dateOfBirth) VALUES (@_fullName, @_gender, @_age, @_biography, @_image, @_dateOfBirth);";
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@_fullName", SqlDbType.VarChar) {Value = fullName},
-                new SqlParameter("@_gender", SqlDbType.Char) {Value = Gender},
-                new SqlParameter("@_age", SqlDbType.Char) {Value = Age},
-                new SqlParameter("@_biography", SqlDbType.NVarChar) {Value = biographyTextBox.Text},
-                new SqlParameter("@_image", SqlDbType.NVarChar) {Value = Image},
-                new SqlParameter("@_dateOfBirth", SqlDbType.Date) {Value = birthDate}
-            };
-            int res = conn.ExecuteNonQuery(query, parameters);
-            if (res > 0)
-            {
-                MessageBox.Show("Record added successfully!", "Add Record",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cleanFields();
+                string query = "INSERT INTO Gamers (fullName, gender, age, biography, image, dateOfBirth) VALUES (@_fullName, @_gender, @_age, @_biography, @_image, @_dateOfBirth);";
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@_fullName", SqlDbType.VarChar) {Value = fullName},
+                    new SqlParameter("@_gender", SqlDbType.Char) {Value = Gender},
+                    new SqlParameter("@_age", SqlDbType.Char) {Value = Age},
+                    new SqlParameter("@_biography", SqlDbType.NVarChar) {Value = biographyTextBox.Text},
+                    new SqlParameter("@_image", SqlDbType.NVarChar) {Value = Image},
+                    new SqlParameter("@_dateOfBirth", SqlDbType.Date) {Value = birthDate}
+                };
+                int res = conn.ExecuteNonQuery(query, parameters);
+                if (res > 0)
+                {
+                    MessageBox.Show("Record added successfully!", "Add Record",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cleanFields();
+                }
             }
+            else
+                MessageBox.Show("Cannot be empty Firstname or Lastname fields");
+            
         }
 
         private void Save(object sender, EventArgs e)

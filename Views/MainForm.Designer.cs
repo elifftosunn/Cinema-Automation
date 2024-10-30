@@ -32,16 +32,24 @@
             exitButton = new Button();
             title = new Label();
             leftPanel = new Panel();
+            panel2 = new Panel();
+            gamerListButton = new Button();
+            panel1 = new Panel();
             gamerRecordButton = new Button();
             listDirectorPanel = new Panel();
             directorListButton = new Button();
             recordDirectorPanel = new Panel();
             recordDirectorButton = new Button();
             footerPanel = new Panel();
+            panel3 = new Panel();
+            saloonRecordButton = new Button();
             headerPanel.SuspendLayout();
             leftPanel.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             listDirectorPanel.SuspendLayout();
             recordDirectorPanel.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // headerPanel
@@ -85,7 +93,9 @@
             // leftPanel
             // 
             leftPanel.BackColor = Color.FromArgb(0, 153, 153);
-            leftPanel.Controls.Add(gamerRecordButton);
+            leftPanel.Controls.Add(panel3);
+            leftPanel.Controls.Add(panel2);
+            leftPanel.Controls.Add(panel1);
             leftPanel.Controls.Add(listDirectorPanel);
             leftPanel.Controls.Add(recordDirectorPanel);
             leftPanel.Dock = DockStyle.Left;
@@ -93,6 +103,43 @@
             leftPanel.Name = "leftPanel";
             leftPanel.Size = new Size(225, 399);
             leftPanel.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(gamerListButton);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 123);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(225, 41);
+            panel2.TabIndex = 4;
+            // 
+            // gamerListButton
+            // 
+            gamerListButton.AccessibleRole = AccessibleRole.None;
+            gamerListButton.BackColor = Color.FromArgb(0, 153, 153);
+            gamerListButton.Dock = DockStyle.Top;
+            gamerListButton.FlatAppearance.BorderSize = 0;
+            gamerListButton.FlatStyle = FlatStyle.Flat;
+            gamerListButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            gamerListButton.Location = new Point(0, 0);
+            gamerListButton.Name = "gamerListButton";
+            gamerListButton.Padding = new Padding(5);
+            gamerListButton.Size = new Size(225, 38);
+            gamerListButton.TabIndex = 0;
+            gamerListButton.Text = "Gamer List";
+            gamerListButton.UseVisualStyleBackColor = false;
+            gamerListButton.Click += gamerListButton_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(gamerRecordButton);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 82);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(225, 41);
+            panel1.TabIndex = 3;
             // 
             // gamerRecordButton
             // 
@@ -102,14 +149,14 @@
             gamerRecordButton.FlatAppearance.BorderSize = 0;
             gamerRecordButton.FlatStyle = FlatStyle.Flat;
             gamerRecordButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            gamerRecordButton.Location = new Point(0, 82);
+            gamerRecordButton.Location = new Point(0, 0);
             gamerRecordButton.Name = "gamerRecordButton";
             gamerRecordButton.Padding = new Padding(5);
             gamerRecordButton.Size = new Size(225, 38);
-            gamerRecordButton.TabIndex = 2;
+            gamerRecordButton.TabIndex = 0;
             gamerRecordButton.Text = "Gamer Record";
             gamerRecordButton.UseVisualStyleBackColor = false;
-            gamerRecordButton.Click += gamerRecordButton_Click;
+            gamerRecordButton.Click += gamerRecordButton_Click_1;
             // 
             // listDirectorPanel
             // 
@@ -174,6 +221,33 @@
             footerPanel.Size = new Size(438, 40);
             footerPanel.TabIndex = 3;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(saloonRecordButton);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 164);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(225, 41);
+            panel3.TabIndex = 5;
+            // 
+            // saloonRecordButton
+            // 
+            saloonRecordButton.AccessibleRole = AccessibleRole.None;
+            saloonRecordButton.BackColor = Color.FromArgb(0, 153, 153);
+            saloonRecordButton.Dock = DockStyle.Top;
+            saloonRecordButton.FlatAppearance.BorderSize = 0;
+            saloonRecordButton.FlatStyle = FlatStyle.Flat;
+            saloonRecordButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            saloonRecordButton.Location = new Point(0, 0);
+            saloonRecordButton.Name = "saloonRecordButton";
+            saloonRecordButton.Padding = new Padding(5);
+            saloonRecordButton.Size = new Size(225, 38);
+            saloonRecordButton.TabIndex = 0;
+            saloonRecordButton.Text = "Saloon Record";
+            saloonRecordButton.UseVisualStyleBackColor = false;
+            saloonRecordButton.Click += saloonRecordButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -188,8 +262,11 @@
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
             leftPanel.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             listDirectorPanel.ResumeLayout(false);
             recordDirectorPanel.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -204,6 +281,11 @@
         private Button recordDirectorButton;
         private Panel listDirectorPanel;
         private Button directorListButton;
+        private Panel panel2;
+        private Button gamerListButton;
+        private Panel panel1;
         private Button gamerRecordButton;
+        private Panel panel3;
+        private Button saloonRecordButton;
     }
 }

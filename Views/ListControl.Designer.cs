@@ -1,6 +1,6 @@
 ﻿namespace cinemaAutomation.Views
 {
-    partial class DirectorListControl
+    partial class ListControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectorListControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListControl));
             panel1 = new Panel();
             controlFullName = new Label();
             controlImagePictureBox = new PictureBox();

@@ -127,7 +127,7 @@ namespace cinemaAutomation
                 }
                 else
                     MessageBox.Show("Record not updated!", "Update Record",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }else
                 MessageBox.Show("Cannot be empty Firstname or Lastname fields");
 

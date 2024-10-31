@@ -34,6 +34,7 @@
             labelSaloonName = new Label();
             labelSeatingCapacity = new Label();
             label1 = new Label();
+            saloonIDLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -89,11 +90,22 @@
             label1.TabIndex = 4;
             label1.Text = "Seating Number: ";
             // 
+            // saloonIDLabel
+            // 
+            saloonIDLabel.AutoSize = true;
+            saloonIDLabel.Location = new Point(181, 17);
+            saloonIDLabel.Name = "saloonIDLabel";
+            saloonIDLabel.Size = new Size(22, 20);
+            saloonIDLabel.TabIndex = 5;
+            saloonIDLabel.Text = "id";
+            saloonIDLabel.Visible = false;
+            // 
             // SaloonUserControlForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(saloonIDLabel);
             Controls.Add(label1);
             Controls.Add(labelSeatingCapacity);
             Controls.Add(labelSaloonName);
@@ -101,6 +113,7 @@
             Controls.Add(panel1);
             Name = "SaloonUserControlForm";
             Size = new Size(252, 95);
+            Click += SaloonUserControlForm_Click;
             MouseLeave += SaloonUserControl_MouseLeave;
             MouseHover += SaloonUserControl_MouseHover;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -115,5 +128,6 @@
         public Label labelSaloonName;
         public Label labelSeatingCapacity;
         private Label label1;
+        public Label saloonIDLabel;
     }
 }

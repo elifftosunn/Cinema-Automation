@@ -34,13 +34,13 @@
             saloonNameTextBox = new TextBox();
             numericUpDownSeatingCapacity = new NumericUpDown();
             seatingCapacityLabel = new Label();
-            directorIDLabel = new Label();
             saloonNameLabel = new Label();
             headerPanel = new Panel();
             exitButton = new Button();
             title = new Label();
             saloonRecordGroupBox = new GroupBox();
             flowLayoutPanelSaloon = new FlowLayoutPanel();
+            saloonIdLabel = new Label();
             groupBoxSaloonRecord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownSeatingCapacity).BeginInit();
             headerPanel.SuspendLayout();
@@ -59,15 +59,16 @@
             updateRecordButton.TabIndex = 13;
             updateRecordButton.Text = "Update Record";
             updateRecordButton.UseVisualStyleBackColor = false;
+            updateRecordButton.Click += updateRecordButton_Click;
             // 
             // groupBoxSaloonRecord
             // 
+            groupBoxSaloonRecord.Controls.Add(saloonIdLabel);
             groupBoxSaloonRecord.Controls.Add(saloonRecordButton);
             groupBoxSaloonRecord.Controls.Add(updateRecordButton);
             groupBoxSaloonRecord.Controls.Add(saloonNameTextBox);
             groupBoxSaloonRecord.Controls.Add(numericUpDownSeatingCapacity);
             groupBoxSaloonRecord.Controls.Add(seatingCapacityLabel);
-            groupBoxSaloonRecord.Controls.Add(directorIDLabel);
             groupBoxSaloonRecord.Controls.Add(saloonNameLabel);
             groupBoxSaloonRecord.Location = new Point(12, 62);
             groupBoxSaloonRecord.Name = "groupBoxSaloonRecord";
@@ -111,15 +112,6 @@
             seatingCapacityLabel.Size = new Size(124, 20);
             seatingCapacityLabel.TabIndex = 10;
             seatingCapacityLabel.Text = "Seating Capacity";
-            // 
-            // directorIDLabel
-            // 
-            directorIDLabel.AutoSize = true;
-            directorIDLabel.Location = new Point(23, 12);
-            directorIDLabel.Name = "directorIDLabel";
-            directorIDLabel.Size = new Size(0, 20);
-            directorIDLabel.TabIndex = 8;
-            directorIDLabel.Visible = false;
             // 
             // saloonNameLabel
             // 
@@ -190,6 +182,16 @@
             flowLayoutPanelSaloon.Size = new Size(541, 326);
             flowLayoutPanelSaloon.TabIndex = 0;
             // 
+            // saloonIdLabel
+            // 
+            saloonIdLabel.AutoSize = true;
+            saloonIdLabel.Location = new Point(10, 13);
+            saloonIdLabel.Name = "saloonIdLabel";
+            saloonIdLabel.Size = new Size(22, 20);
+            saloonIdLabel.TabIndex = 15;
+            saloonIdLabel.Text = "id";
+            saloonIdLabel.Visible = false;
+            // 
             // SaloonRecordForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -216,32 +218,18 @@
         #endregion
 
         private Button updateRecordButton;
-        private GroupBox groupBox3;
-        private Label max300CharacterLabel;
-        private Label characterNumberLabel;
-        public TextBox biographyTextBox;
-        private GroupBox groupBox2;
-        private Button uploadImageButton;
-        private Label biographyLabel;
-        public PictureBox imagePictureBox;
         private GroupBox groupBoxSaloonRecord;
-        public Label directorIDLabel;
-        private Label genderLabel;
-        public ComboBox genderComboBox;
         public DateTimePicker DateOfBirthDateTimePicker;
-        public TextBox lastNameTextBox;
-        public TextBox firstNameTextBox;
-        private Label dateOfBirthLabel;
-        private Label lastNameLabel;
         private Label saloonNameLabel;
         private Panel headerPanel;
         private Button exitButton;
         private Label title;
-        private NumericUpDown numericUpDownSeatingCapacity;
         private Label seatingCapacityLabel;
-        private TextBox saloonNameTextBox;
         private Button saloonRecordButton;
         private GroupBox saloonRecordGroupBox;
         private FlowLayoutPanel flowLayoutPanelSaloon;
+        public TextBox saloonNameTextBox;
+        public NumericUpDown numericUpDownSeatingCapacity;
+        private Label saloonIdLabel;
     }
 }
